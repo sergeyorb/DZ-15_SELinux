@@ -1,0 +1,312 @@
+[root@localhost ~]# sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+[root@localhost ~]# yum install nginx
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.sale-dedic.com
+ * extras: mirror.sale-dedic.com
+ * updates: mirror.sale-dedic.com
+No package nginx available.
+Error: Nothing to do
+[root@localhost ~]# nginx -v
+-bash: nginx: command not found
+[root@localhost ~]# yum install epel-release
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.sale-dedic.com
+ * extras: mirror.sale-dedic.com
+ * updates: mirror.sale-dedic.com
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-11 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================================================
+ Package                                                     Arch                                                  Version                                               Repository                                             Size
+=====================================================================================================================================================================================================================================
+Installing:
+ epel-release                                                noarch                                                7-11                                                  extras                                                 15 k
+
+Transaction Summary
+=====================================================================================================================================================================================================================================
+Install  1 Package
+
+Total download size: 15 k
+Installed size: 24 k
+Is this ok [y/d/N]: y
+Downloading packages:
+epel-release-7-11.noarch.rpm   FAILED
+http://mirror.sale-dedic.com/centos/7.9.2009/extras/x86_64/Packages/epel-release-7-11.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirror.sale-dedic.com; Unknown error"               ]  0.0 B/s |    0 B  --:--:-- ETA
+Trying other mirror.
+epel-release-7-11.noarch.rpm                                                                                                                                                                                  |  15 kB  00:00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : epel-release-7-11.noarch                                                                                                                                                                                          1/1
+  Verifying  : epel-release-7-11.noarch                                                                                                                                                                                          1/1
+
+Installed:
+  epel-release.noarch 0:7-11
+
+Complete!
+[root@localhost ~]# yum install nginx
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+epel/x86_64/metalink                                                                                                                                                                                          |  30 kB  00:00:00
+ * base: mirror.sale-dedic.com
+ * epel: mirror.yandex.ru
+ * extras: mirror.sale-dedic.com
+ * updates: mirror.sale-dedic.com
+epel                                                                                                                                                                                                          | 4.7 kB  00:00:00
+(1/3): epel/x86_64/group_gz                                                                                                                                                                                   |  96 kB  00:00:05
+(2/3): epel/x86_64/updateinfo                                                                                                                                                                                 | 1.1 MB  00:00:00
+(3/3): epel/x86_64/primary_db                                                                                                                                                                                 | 7.0 MB  00:00:01
+Resolving Dependencies
+--> Running transaction check
+---> Package nginx.x86_64 1:1.20.1-9.el7 will be installed
+--> Processing Dependency: nginx-filesystem = 1:1.20.1-9.el7 for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: libssl.so.1.1(OPENSSL_1_1_0)(64bit) for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: libssl.so.1.1(OPENSSL_1_1_1)(64bit) for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: nginx-filesystem for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: redhat-indexhtml for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: libcrypto.so.1.1()(64bit) for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: libprofiler.so.0()(64bit) for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Processing Dependency: libssl.so.1.1()(64bit) for package: 1:nginx-1.20.1-9.el7.x86_64
+--> Running transaction check
+---> Package centos-indexhtml.noarch 0:7-9.el7.centos will be installed
+---> Package gperftools-libs.x86_64 0:2.6.1-1.el7 will be installed
+---> Package nginx-filesystem.noarch 1:1.20.1-9.el7 will be installed
+---> Package openssl11-libs.x86_64 1:1.1.1k-3.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=====================================================================================================================================================================================================================================
+ Package                                                      Arch                                               Version                                                      Repository                                        Size
+=====================================================================================================================================================================================================================================
+Installing:
+ nginx                                                        x86_64                                             1:1.20.1-9.el7                                               epel                                             587 k
+Installing for dependencies:
+ centos-indexhtml                                             noarch                                             7-9.el7.centos                                               base                                              92 k
+ gperftools-libs                                              x86_64                                             2.6.1-1.el7                                                  base                                             272 k
+ nginx-filesystem                                             noarch                                             1:1.20.1-9.el7                                               epel                                              24 k
+ openssl11-libs                                               x86_64                                             1:1.1.1k-3.el7                                               epel                                             1.5 M
+
+Transaction Summary
+=====================================================================================================================================================================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 2.4 M
+Installed size: 6.7 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/5): centos-indexhtml-7-9.el7.centos.noarch.rpm                                                                                                                                                             |  92 kB  00:00:00
+warning: /var/cache/yum/x86_64/7/epel/packages/nginx-1.20.1-9.el7.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID 352c64e5: NOKEY                                                               ]  0.0 B/s |  92 kB  --:--:-- ETA
+Public key for nginx-1.20.1-9.el7.x86_64.rpm is not installed
+(2/5): nginx-1.20.1-9.el7.x86_64.rpm                                                                                                                                                                          | 587 kB  00:00:00
+(3/5): nginx-filesystem-1.20.1-9.el7.noarch.rpm                                                                                                                                                               |  24 kB  00:00:00
+(4/5): openssl11-libs-1.1.1k-3.el7.x86_64.rpm                                                                                                                                                                 | 1.5 MB  00:00:00
+(5/5): gperftools-libs-2.6.1-1.el7.x86_64.rpm                                                                                                                                                                 | 272 kB  00:00:05
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                                                425 kB/s | 2.4 MB  00:00:05
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@extras)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Is this ok [y/N]: y
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : gperftools-libs-2.6.1-1.el7.x86_64                                                                                                                                                                                1/5
+  Installing : 1:nginx-filesystem-1.20.1-9.el7.noarch                                                                                                                                                                            2/5
+  Installing : 1:openssl11-libs-1.1.1k-3.el7.x86_64                                                                                                                                                                              3/5
+  Installing : centos-indexhtml-7-9.el7.centos.noarch                                                                                                                                                                            4/5
+  Installing : 1:nginx-1.20.1-9.el7.x86_64                                                                                                                                                                                       5/5
+  Verifying  : centos-indexhtml-7-9.el7.centos.noarch                                                                                                                                                                            1/5
+  Verifying  : 1:openssl11-libs-1.1.1k-3.el7.x86_64                                                                                                                                                                              2/5
+  Verifying  : 1:nginx-filesystem-1.20.1-9.el7.noarch                                                                                                                                                                            3/5
+  Verifying  : gperftools-libs-2.6.1-1.el7.x86_64                                                                                                                                                                                4/5
+  Verifying  : 1:nginx-1.20.1-9.el7.x86_64                                                                                                                                                                                       5/5
+
+Installed:
+  nginx.x86_64 1:1.20.1-9.el7
+
+Dependency Installed:
+  centos-indexhtml.noarch 0:7-9.el7.centos                   gperftools-libs.x86_64 0:2.6.1-1.el7                   nginx-filesystem.noarch 1:1.20.1-9.el7                   openssl11-libs.x86_64 1:1.1.1k-3.el7
+
+Complete!
+[root@localhost ~]#
+[root@localhost sbin]# systemctl status nginx.service
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: failed (Result: exit-code) since Tue 2022-07-26 13:01:13 +05; 12min ago
+  Process: 1609 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=1/FAILURE)
+  Process: 1607 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+
+Jul 26 13:01:13 localhost.localdomain systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jul 26 13:01:13 localhost.localdomain nginx[1609]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 26 13:01:13 localhost.localdomain systemd[1]: nginx.service: control process exited, code=exited status=1
+Jul 26 13:01:13 localhost.localdomain nginx[1609]: nginx: [emerg] bind() to [::]:4881 failed (13: Permission denied)
+Jul 26 13:01:13 localhost.localdomain nginx[1609]: nginx: configuration file /etc/nginx/nginx.conf test failed
+Jul 26 13:01:13 localhost.localdomain systemd[1]: Failed to start The nginx HTTP and reverse proxy server.
+Jul 26 13:01:13 localhost.localdomain systemd[1]: Unit nginx.service entered failed state.
+Jul 26 13:01:13 localhost.localdomain systemd[1]: nginx.service failed.
+[root@localhost sbin]# systemctl start nginx.service
+Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
+[root@localhost sbin]# cat /var/log/audit/audit.log
+type=DAEMON_START msg=audit(1658667955.850:3256): op=start ver=2.8.5 format=raw kernel=3.10.0-1160.el7.x86_64 auid=4294967295 pid=631 uid=0 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=success
+type=CONFIG_CHANGE msg=audit(1658667955.981:5): audit_backlog_limit=8192 old=64 auid=4294967295 ses=4294967295 subj=system_u:system_r:unconfined_service_t:s0 res=1
+type=CONFIG_CHANGE msg=audit(1658667955.981:6): audit_failure=1 old=1 auid=4294967295 ses=4294967295 subj=system_u:system_r:unconfined_service_t:s0 res=1
+type=SERVICE_START msg=audit(1658667955.984:7): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=auditd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+........................................................
+type=AVC msg=audit(1658823225.615:185): avc:  denied  { name_bind } for  pid=1794 comm="nginx" src=4881 scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:object_r:unreserved_port_t:s0 tclass=tcp_socket permissive=0
+type=SYSCALL msg=audit(1658823225.615:185): arch=c000003e syscall=49 success=no exit=-13 a0=7 a1=56359756fc18 a2=1c a3=7ffd2d25f654 items=0 ppid=1 pid=1794 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="nginx" exe="/usr/sbin/nginx" subj=system_u:system_r:httpd_t:s0 key=(null)
+type=PROCTITLE msg=audit(1658823225.615:185): proctitle=2F7573722F7362696E2F6E67696E78002D74
+type=SERVICE_START msg=audit(1658823225.618:186): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+###################################################################
+1 СПОСОБ
+###################################################################
+[root@localhost sbin]# grep 1658823225.615:185 /var/log/audit/audit.log | audit2why
+type=AVC msg=audit(1658823225.615:185): avc:  denied  { name_bind } for  pid=1794 comm="nginx" src=4881 scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:object_r:unreserved_port_t:s0 tclass=tcp_socket permissive=0
+
+        Was caused by:
+        The boolean nis_enabled was set incorrectly.
+        Description:
+        Allow nis to enabled
+
+        Allow access by executing:
+        # setsebool -P nis_enabled 1
+[root@localhost sbin]# setsebool -P nis_enabled on
+[root@localhost sbin]# systemctl start nginx
+[root@localhost sbin]# systemctl restart nginx
+[root@localhost sbin]# systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-07-26 13:17:41 +05; 8s ago
+  Process: 1854 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 1852 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 1851 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 1856 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─1856 nginx: master process /usr/sbin/nginx
+           └─1857 nginx: worker process
+
+Jul 26 13:17:41 localhost.localdomain systemd[1]: Stopped The nginx HTTP and reverse proxy server.
+Jul 26 13:17:41 localhost.localdomain systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jul 26 13:17:41 localhost.localdomain nginx[1852]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 26 13:17:41 localhost.localdomain nginx[1852]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jul 26 13:17:41 localhost.localdomain systemd[1]: Started The nginx HTTP and reverse proxy server.
+[root@localhost sbin]#
+[root@localhost sbin]# setsebool -P nis_enabled off
+Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
+[root@localhost sbin]#
+###################################################################
+2 СПОСОБ
+###################################################################
+[root@localhost sbin]# semanage port -l | grep http
+http_cache_port_t              tcp      8080, 8118, 8123, 10001-10010
+http_cache_port_t              udp      3130
+http_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
+pegasus_http_port_t            tcp      5988
+pegasus_https_port_t           tcp      5989
+[root@localhost sbin]#
+[root@localhost sbin]# semanage port -a -t http_port_t -p tcp 4881
+[root@localhost sbin]# semanage port -l | grep http_port_t
+http_port_t                    tcp      4881, 80, 81, 443, 488, 8008, 8009, 8443, 9000
+pegasus_http_port_t            tcp      5988
+[root@localhost sbin]# systemctl restart nginx
+[root@localhost sbin]# systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-07-26 13:47:47 +05; 8s ago
+  Process: 2016 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 2014 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 2013 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 2018 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─2018 nginx: master process /usr/sbin/nginx
+           └─2020 nginx: worker process
+
+Jul 26 13:47:47 localhost.localdomain systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jul 26 13:47:47 localhost.localdomain nginx[2014]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 26 13:47:47 localhost.localdomain nginx[2014]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jul 26 13:47:47 localhost.localdomain systemd[1]: Started The nginx HTTP and reverse proxy server.
+[root@localhost sbin]#
+[root@localhost sbin]# semanage port -d -t http_port_t -p tcp 4881
+[root@localhost sbin]# semanage port -l | grep http_port_t
+http_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
+pegasus_http_port_t            tcp      5988
+[root@localhost sbin]# systemctl restart nginx
+Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.
+[root@localhost sbin]#
+[root@localhost sbin]# systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: failed (Result: exit-code) since Tue 2022-07-26 13:51:05 +05; 1min 43s ago
+  Process: 2016 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 2060 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=1/FAILURE)
+  Process: 2059 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 2018 (code=exited, status=0/SUCCESS)
+
+Jul 26 13:51:05 localhost.localdomain systemd[1]: Stopped The nginx HTTP and reverse proxy server.
+Jul 26 13:51:05 localhost.localdomain systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jul 26 13:51:05 localhost.localdomain nginx[2060]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 26 13:51:05 localhost.localdomain nginx[2060]: nginx: [emerg] bind() to [::]:4881 failed (13: Permission denied)
+Jul 26 13:51:05 localhost.localdomain nginx[2060]: nginx: configuration file /etc/nginx/nginx.conf test failed
+Jul 26 13:51:05 localhost.localdomain systemd[1]: nginx.service: control process exited, code=exited status=1
+Jul 26 13:51:05 localhost.localdomain systemd[1]: Failed to start The nginx HTTP and reverse proxy server.
+Jul 26 13:51:05 localhost.localdomain systemd[1]: Unit nginx.service entered failed state.
+Jul 26 13:51:05 localhost.localdomain systemd[1]: nginx.service failed.
+[root@localhost sbin]#
+###################################################################
+3 СПОСОБ
+###################################################################
+[root@localhost sbin]# grep nginx /var/log/audit/audit.log
+type=SOFTWARE_UPDATE msg=audit(1658673063.923:536): pid=401 uid=0 auid=1000 ses=4 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='sw="nginx-filesystem-1:1.20.1-9.el7.noarch" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="yum" exe="/usr/bin/python2.7" hostname=localhost.localdomain addr=? terminal=pts/1 res=success'
+type=SOFTWARE_UPDATE msg=audit(1658673064.229:539): pid=401 uid=0 auid=1000 ses=4 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='sw="nginx-1:1.20.1-9.el7.x86_64" sw_type=rpm key_enforce=0 gpg_res=1 root_dir="/" comm="yum" exe="/usr/bin/python2.7" hostname=localhost.localdomain addr=? terminal=pts/1 res=success'
+type=AVC msg=audit(1658673220.572:542): avc:  denied  { name_bind } for  pid=560 comm="nginx" src=4881 scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:object_r:unreserved_port_t:s0 tclass=tcp_socket permissive=0
+......................................................
+type=SYSCALL msg=audit(1658825465.222:227): arch=c000003e syscall=49 success=no exit=-13 a0=7 a1=562d6c099c18 a2=1c a3=7ffcbe4804e4 items=0 ppid=1 pid=2060 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="nginx" exe="/usr/sbin/nginx" subj=system_u:system_r:httpd_t:s0 key=(null)
+type=SERVICE_START msg=audit(1658825465.224:228): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=nginx comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+[root@localhost sbin]#
+[root@localhost sbin]# grep nginx /var/log/audit/audit.log | audit2allow -M nginx
+******************** IMPORTANT ***********************
+To make this policy package active, execute:
+
+semodule -i nginx.pp
+
+[root@localhost sbin]#
+[root@localhost sbin]# semodule -i nginx.pp
+[root@localhost sbin]# systemctl start nginx
+[root@localhost sbin]# systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-07-26 13:58:37 +05; 12s ago
+  Process: 2126 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 2124 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 2123 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 2128 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─2128 nginx: master process /usr/sbin/nginx
+           └─2130 nginx: worker process
+
+Jul 26 13:58:37 localhost.localdomain systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Jul 26 13:58:37 localhost.localdomain nginx[2124]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Jul 26 13:58:37 localhost.localdomain nginx[2124]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Jul 26 13:58:37 localhost.localdomain systemd[1]: Started The nginx HTTP and reverse proxy server.
+[root@localhost sbin]#
